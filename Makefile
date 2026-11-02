@@ -36,6 +36,8 @@ $(MAIN_OBJ): $(SRC_DIR)/main.cpp | $(BUILD_DIR)
 $(BUILD_DIR)/%.o: $(TEST_DIR)/%.cpp | $(BUILD_DIR)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
+$(TEST_OBJ): include/project/PriorityQueue.hpp include/project/PriorityQueue.tpp
+
 # Link main program
 $(EXECUTABLE): $(MAIN_OBJ) $(OBJ)
 	$(CXX) $(CXXFLAGS) $^ -o $@
